@@ -98,6 +98,7 @@ struct CustomisationPage: View {
     }
 }
 
+//This view does nothing.lol.
 struct funnypage: View {
     var body: some View {
         VStack() {
