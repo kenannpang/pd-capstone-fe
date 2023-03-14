@@ -15,20 +15,20 @@ struct ContentView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.white)
                             .padding(8)
-                            .background(Color.blue)
+                            .background(Color.pink)
                             .cornerRadius(8)
                     }
                 }
                 .padding()
                 
                 ScrollView(.horizontal) {
-                    HStack {
+                    HStack{
                         ForEach(1...10, id: \.self) { _ in
                             VStack {
                                 Image(systemName: "photo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 100, height: 100)
                                     .cornerRadius(8)
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text("Listing Title")
@@ -45,12 +45,13 @@ struct ContentView: View {
                                     .foregroundColor(.white)
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
-                                    .background(Color.blue)
+                                    .background(Color.pink)
                                     .cornerRadius(8)
                             }
                         }
                         .padding(.horizontal)
                         .padding(.vertical, 4)
+                        .frame(height: 200)
                         .background(Color(.systemGray5))
                         .cornerRadius(8)
                         .padding(.horizontal)
