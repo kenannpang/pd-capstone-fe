@@ -1,6 +1,5 @@
 import SwiftUI
 
-//14mar - make the look for swimlane bubble tea. Reconvene 3pm
 struct ContentView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
@@ -66,9 +65,7 @@ struct ContentView: View {
                             }
                             .padding()
                         }
-                        // Add a pink container with text "Hello!"
-                        // and 5 lines of text below it
-                        // using VStack and Text views
+
                         HStack {
                             VStack {
                                 Text("Hello")
@@ -105,8 +102,7 @@ struct ContentView: View {
                         }
                         .padding()
                         
-                        // Add a pink "Done" button at the bottom of the page
-                        // that navigates to a view called "Done"
+                        
                         NavigationLink(
                             destination: DoneView(),
                             label: {
@@ -120,10 +116,8 @@ struct ContentView: View {
                             .padding()
                     }
                 }
-                //.padding(.top)
             }
         }
-        //.navigationTitle("Page 1")
     }
 }
 
@@ -163,7 +157,7 @@ struct CustomisationPage: View {
     }
 }
 
-//This view does nothing.lol.
+
 struct DoneView: View {
     var body: some View {
         VStack() {
