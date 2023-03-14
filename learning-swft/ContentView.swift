@@ -178,6 +178,19 @@ struct CustomisationPage: View {
                     
                     
                 }.padding()
+                
+                Spacer()
+                NavigationLink(
+                    destination: ContentView(),
+                    label: {
+                        Text("Add to Cart")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.pink)
+                            .cornerRadius(8)
+                    })
+                    .padding()
             }
         }
     }
