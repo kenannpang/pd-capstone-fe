@@ -23,40 +23,43 @@ struct ContentView: View {
                 
                 ScrollView(.vertical) {
                     VStack {
-                        HStack{
-                            ForEach(1...10, id: \.self) { _ in
-                                VStack {
-                                    Image(systemName: "photo")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 100, height: 100)
-                                        .cornerRadius(8)
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("Listing Title")
-                                            .font(.headline)
-                                        Text("Listing Description")
-                                            .font(.subheadline)
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(1...10, id: \.self) { _ in
+                                    VStack {
+                                        Image(systemName: "photo")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 100, height: 100)
+                                            .cornerRadius(8)
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text("Listing Title")
+                                                .font(.headline)
+                                            Text("Listing Description")
+                                                .font(.subheadline)
+                                        }
+                                        Spacer()
+                                        Text("$10.00")
+                                        
+                                        Spacer()
+                                        NavigationLink("Learn More", destination: CustomisationPage())
+                                            .font(.caption)
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 8)
+                                            .padding(.vertical, 4)
+                                            .background(Color.pink)
+                                            .cornerRadius(8)
                                     }
-                                    Spacer()
-                                    Text("$10.00")
-                                    
-                                    Spacer()
-                                    NavigationLink("Learn More", destination: CustomisationPage())
-                                        .font(.caption)
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 4)
-                                        .background(Color.pink)
-                                        .cornerRadius(8)
                                 }
+                                .padding(.horizontal)
+                                .padding(.vertical, 4)
+                                .frame(height: 200)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
-                            .padding(.vertical, 4)
-                            .frame(height: 200)
-                            .background(Color(.systemGray5))
-                            .cornerRadius(8)
-                            .padding(.horizontal)
                         }
+                        
                     }
                     
                 }
