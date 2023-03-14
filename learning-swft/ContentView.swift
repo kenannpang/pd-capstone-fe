@@ -161,8 +161,16 @@ struct CustomisationPage: View {
 struct DoneView: View {
     var body: some View {
         VStack() {
-            Text("Hello world")
+            Text("Order Details").font(.title)
+            HStack {
+                Text("Order number").font(.subheadline)
+                Spacer()
+                Text("#xnnp-r6pt").padding(4).background(Color.gray).cornerRadius(8)
+
+            }
+            .padding()
         }
+        
     }
 }
 
