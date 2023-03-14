@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var order_count : Int = 0
+    @State var order_count : Int = 2
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -24,7 +24,7 @@ struct ContentView: View {
                 ScrollView(.vertical) {
                     //order component, repeats a Horizontal container with qty, img, listing title, description, and price
                     VStack {
-                        ForEach(1...2, id: \.self) { _ in
+                        ForEach(1...order_count, id: \.self) { _ in
                             HStack {
                                 Text("Qty: 1").font(.headline)
                                 Spacer()
