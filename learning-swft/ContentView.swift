@@ -96,11 +96,11 @@ struct ContentView: View {
                         VStack {
                             ForEach(1...5, id: \.self) { index in
                                 HStack {
-                                    Text("Random text \(index)")
+                                    Text("#Fee \(index)")
                                     Spacer()
-                                    Text("Random text \(index)")
+                                    Text("S$ <Price_\(index)>")
                                 }
-                                
+                                .padding()
                             }
                         }
                         .padding()
