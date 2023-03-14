@@ -120,30 +120,30 @@ struct ContentView: View {
                             }
                             .padding(.horizontal)
                         }
-                        
-                        HStack {
-                            VStack {
-                                Text("Hello")
-                                    .font(.headline)
-                                Text("Hello")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
-                            }
-                            .padding()
-                            
-                            Spacer()
-                            
-                            VStack {
-                                Image(systemName: "photo")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
-                                    .cornerRadius(8)
-                            }
-                            .padding()
-                        }
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
-                        .background(Color.pink)
+// Pink Banner
+//                        HStack {
+//                            VStack {
+//                                Text("Hello")
+//                                    .font(.headline)
+//                                Text("Hello")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(.white)
+//                            }
+//                            .padding()
+//
+//                            Spacer()
+//
+//                            VStack {
+//                                Image(systemName: "photo")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
+//                                    .cornerRadius(8)
+//                            }
+//                            .padding()
+//                        }
+//                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
+//                        .background(Color.pink)
                         
                         VStack {
                             ForEach(1...5, id: \.self) { index in
@@ -338,6 +338,8 @@ struct StratchView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
