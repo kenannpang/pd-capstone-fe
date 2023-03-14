@@ -21,6 +21,37 @@ struct ContentView: View {
                 .padding()
                 
                 ScrollView(.vertical) {
+                    //order component, repeats a Horizontal container with qty, img, listing title, description, and price
+                    VStack {
+                        ForEach(1...2, id: \.self) { _ in
+                            HStack {
+                                Text("Qty: 1").font(.headline)
+                                Spacer()
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: UIScreen.main.bounds.width/5)
+                                    .cornerRadius(8)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Listing Title")
+                                        .font(.headline)
+                                        .padding(.horizontal)
+                                    Text("Listing Description")
+                                        .font(.subheadline)
+                                        .padding(.horizontal)
+                                }
+                                Spacer()
+                                Text("$10.00")
+                            }
+                        }
+                        
+                    }
+                    .padding()
+                    Rectangle()
+                        .fill(.gray)
+                        .frame(height: 8)
+                    
+                    
                     VStack {
                         VStack{
                             HStack {
