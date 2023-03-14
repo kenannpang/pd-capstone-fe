@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var order_count : Int = 0
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -47,6 +48,15 @@ struct ContentView: View {
                         
                     }
                     .padding()
+                    Button(action:{
+                        self.order_count += 1
+                    }) {
+                        Text("Increase order: \(order_count)")
+                    }
+                    .foregroundColor(.white)
+                    .padding(8)
+                    .background(Color.pink)
+                    .cornerRadius(8)
                     Rectangle()
                         .fill(.gray)
                         .frame(height: 8)
@@ -297,6 +307,7 @@ struct DoneView: View {
 }
 
 struct StratchView: View {
+    @State var count : Int = 0
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
