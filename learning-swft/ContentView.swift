@@ -1,5 +1,6 @@
 import SwiftUI
 
+//14mar - make the look for swimlane bubble tea. Reconvene 3pm
 struct ContentView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
