@@ -21,10 +21,10 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                ScrollView {
-                    VStack {
+                ScrollView(.horizontal) {
+                    HStack {
                         ForEach(1...10, id: \.self) { _ in
-                            HStack {
+                            VStack {
                                 Image(systemName: "photo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
