@@ -158,23 +158,6 @@ struct CustomisationPage: View {
 }
 
 
-struct DoneView: View {
-    var body: some View {
-        VStack() {
-            Text("Order Details").font(.title)
-            HStack {
-                Text("Order number").font(.subheadline)
-                Spacer()
-                Text("#xnnp-r6pt").padding(4).background(Color.gray).cornerRadius(8)
-
-            }
-            .padding()
-        }
-        
-    }
-}
-
-
 struct RadioButton: View {
     @Binding var isSelected: Bool
     var title: String
@@ -192,7 +175,43 @@ struct RadioButton: View {
     }
 }
 
-
+struct DoneView: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Your Order").font(.headline)
+                    Spacer()
+                    Text("Help")
+                        .font(.headline)
+                        .foregroundColor(.pink)
+                }
+                .padding()
+                
+                
+                
+                ScrollView(.vertical) {
+                    VStack() {
+                        HStack {
+                            Text("Order Details").font(.title)
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Text("Order number").font(.subheadline)
+                            Spacer()
+                            Text("#xnnp-r6pt").padding(4).background(Color.gray).cornerRadius(8)
+                        }
+                    }
+                    .padding()
+                }
+                
+            }
+        }
+    }
+}
+                
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
