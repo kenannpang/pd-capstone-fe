@@ -52,17 +52,17 @@ struct ContentView: View {
                                             .frame(maxWidth: .infinity)
                                     }
                                 }
-                                .padding(.horizontal)
+
                                 .padding(.vertical, 4)
-                                .frame(height: 200)
+                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
                                 .background(Color(.systemGray5))
                                 .cornerRadius(8)
-                                .padding(.horizontal)
+                                .padding(.horizontal,4)
                             }
+                            .padding()
                         }
                         
                     }
-                    
                 }
                 //.padding(.top)
             }
