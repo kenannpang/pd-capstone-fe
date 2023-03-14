@@ -30,7 +30,7 @@ struct ContentView: View {
                                         Image(systemName: "photo")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 100, height: 100)
+                                            .frame(maxWidth: .infinity)
                                             .cornerRadius(8)
                                         VStack(alignment: .leading, spacing: 4) {
                                             Text("Listing Title")
@@ -49,6 +49,7 @@ struct ContentView: View {
                                             .padding(.vertical, 4)
                                             .background(Color.pink)
                                             .cornerRadius(8)
+                                            .frame(maxWidth: .infinity)
                                     }
                                 }
                                 .padding(.horizontal)
