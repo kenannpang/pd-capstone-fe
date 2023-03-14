@@ -295,11 +295,41 @@ struct DoneView: View {
         }
     }
 }
+
+struct StratchView: View {
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Stratch View").font(.headline)
+                    Spacer()
+                    Text("For dev to play around")
+                        .font(.headline)
+                        .foregroundColor(.pink)
+                }
+                .padding()
                 
+                
+                
+                ScrollView(.vertical) {
+                    VStack() {
+                        Text("try here")
+                        
+                    }
+                    .padding()
+                }
+                
+            }
+        }
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
         CustomisationPage()
         DoneView()
+        StratchView()
     }
 }
