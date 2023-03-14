@@ -308,6 +308,7 @@ struct DoneView: View {
 
 struct StratchView: View {
     @State var count : Int = 0
+    var a = 100
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -326,7 +327,9 @@ struct StratchView: View {
                 ScrollView(.vertical) {
                     VStack() {
                         Text("try here")
-                        
+                        ForEach(0..<a, id: \.self) {_ in
+                            Text("hi")
+                        }
                     }
                     .padding()
                 }
