@@ -66,7 +66,53 @@ struct ContentView: View {
                             }
                             .padding()
                         }
+                        // Add a pink container with text "Hello!"
+                        // and 5 lines of text below it
+                        // using VStack and Text views
+                        HStack {
+                            VStack {
+                                Text("Hello")
+                                    .font(.headline)
+                                Text("Hello")
+                                    .font(.subheadline)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                        }
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
+                        .background(Color.pink)
                         
+                        VStack {
+                            ForEach(1...5, id: \.self) { index in
+                                Text("Random text \(index)")
+                            }
+                        }
+                        .padding()
+                        
+                        // Add a pink "Done" button at the bottom of the page
+                        // that navigates to a view called "Done"
+                        NavigationLink(
+                            destination: DoneView(),
+                            label: {
+                                Text("Done")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.pink)
+                                    .cornerRadius(8)
+                            })
+                            .padding()
                     }
                 }
                 //.padding(.top)
@@ -113,7 +159,7 @@ struct CustomisationPage: View {
 }
 
 //This view does nothing.lol.
-struct funnypage: View {
+struct DoneView: View {
     var body: some View {
         VStack() {
             Text("Hello world")
@@ -144,6 +190,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
         CustomisationPage()
-        funnypage()
+        DoneView()
     }
 }
