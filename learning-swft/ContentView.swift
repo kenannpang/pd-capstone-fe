@@ -22,6 +22,20 @@ struct ContentView: View {
                 
                 ScrollView(.vertical) {
                     VStack {
+                        VStack{
+                            HStack {
+                                Text("Popular with your order")
+                                    .font(.headline)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("Other customers also bought these")
+                                    .font(.subheadline)
+                                Spacer()
+                            }
+                        }
+                        .padding(.horizontal)
+                        
                         ScrollView(.horizontal) {
                             HStack{
                                 ForEach(1...10, id: \.self) { _ in
@@ -63,9 +77,9 @@ struct ContentView: View {
                                 .cornerRadius(8)
                                 .padding(.horizontal,4)
                             }
-                            .padding()
+                            .padding(.horizontal)
                         }
-
+                        
                         HStack {
                             VStack {
                                 Text("Hello")
