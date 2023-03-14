@@ -95,7 +95,12 @@ struct ContentView: View {
                         
                         VStack {
                             ForEach(1...5, id: \.self) { index in
-                                Text("Random text \(index)")
+                                HStack {
+                                    Text("Random text \(index)")
+                                    Spacer()
+                                    Text("Random text \(index)")
+                                }
+                                
                             }
                         }
                         .padding()
