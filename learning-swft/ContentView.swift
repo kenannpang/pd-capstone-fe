@@ -27,6 +27,7 @@ struct ContentView: View {
                             HStack{
                                 ForEach(1...10, id: \.self) { _ in
                                     VStack {
+                                        Spacer()
                                         Image(systemName: "photo")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
@@ -35,8 +36,10 @@ struct ContentView: View {
                                         VStack(alignment: .leading, spacing: 4) {
                                             Text("Listing Title")
                                                 .font(.headline)
+                                                .padding(.horizontal)
                                             Text("Listing Description")
                                                 .font(.subheadline)
+                                                .padding(.horizontal)
                                         }
                                         Spacer()
                                         Text("$10.00")
@@ -50,6 +53,8 @@ struct ContentView: View {
                                             .background(Color.pink)
                                             .cornerRadius(8)
                                             .frame(maxWidth: .infinity)
+                                        
+                                        Spacer(minLength: 4)
                                     }
                                 }
 
