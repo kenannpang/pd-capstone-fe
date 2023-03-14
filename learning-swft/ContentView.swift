@@ -124,34 +124,60 @@ struct ContentView: View {
 struct CustomisationPage: View {
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                Spacer()
+            VStack {
                 // Listing picture
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                 
-                // Listing title
-                Text("listing.title")
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                // Listing description
-                Text("listing.description")
-                    .foregroundColor(.secondary)
-                    .padding(.horizontal)
-                
-                Spacer() // add a spacer here to push the customisation blocks down
-                
                 // Customisation options
-                VStack(alignment: .leading, spacing: 10) {
-                    // Customisation title
-                    Text("Colour")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    //RadioButton(isSelected: false, title: "Hi mom")
-                }
+                VStack {
+                    HStack {
+                        Text("Title").font(.headline)
+                        Spacer()
+                        Text("S$ 16.80")
+                    }
+                    
+                    //this is repeatable options
+                    VStack {
+                        HStack {
+                            Text("Chocie of Main [Dilmah Mix and Match Bundle]").font(.headline)
+                            Spacer()
+                            Text("Required")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.gray)
+                                .cornerRadius(8)
+                        }
+                        .padding()
+                        HStack {
+                            Text("Select 1").font(.subheadline)
+                            Spacer()
+                        }
+                        .padding()
+                        HStack {
+                            Text("o <Option_1>")
+                            Spacer()
+                            Text("<Price_1>")
+                        }.padding()
+                        HStack {
+                            Text("o <Option_2>")
+                            Spacer()
+                            Text("<Price_2>")
+                        }.padding()
+                        HStack {
+                            Text("o <Option_3>")
+                            Spacer()
+                            Text("<Price_3>")
+                        }.padding()
+                    }
+                    .background(Color.pink)
+                    .cornerRadius(8)
+                    
+                    
+                }.padding()
             }
         }
     }
