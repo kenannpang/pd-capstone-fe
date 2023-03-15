@@ -547,77 +547,19 @@ struct CustomisationPage2: View {
                             Text("Delicious boba with milk tea").font(.subheadline)
                             Spacer()
                         }
-                        //c1. customisation 1: calls customisation_sugar_level
-                        VStack {
-                            HStack {
-                                Text("Sugar Level").font(.headline)
-                                Spacer()
-                                Text("Required")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
-                            .padding()
-                            HStack {
-                                Text("Select 1").font(.subheadline)
-                                Spacer()
-                            }
-                            .padding()
-                            ForEach(customisation_sugar_level, id: \.element.key) { c in
-                                HStack {
-                                    Text("\(c.element.key)").padding(.horizontal)
-                                    Spacer()
-                                    Text("\(c.element.value)").padding(.horizontal)
-                                }
-                            }
+                        ZStack {
+                            Image("fp-customisation-page-hard-coded")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                //.frame(width: UIScreen.main.bounds.width/5)
+                                .cornerRadius(8)
+                            Image("fp-coming-soon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                //.frame(width: UIScreen.main.bounds.width/5)
+                                .cornerRadius(8)
                         }
-                        .background(Color.pink)
-                        .cornerRadius(8)
-                        
-                        // c2 start. customisation 2: calls customisation_ice
-                        VStack {
-                            HStack {
-                                Text("Ice Amount").font(.headline)
-                                Spacer()
-                                Text("Required")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.gray)
-                                    .cornerRadius(8)
-                            }
-                            .padding()
-                            HStack {
-                                Text("Select 1").font(.subheadline)
-                                Spacer()
-                            }
-                            .padding()
-                            ForEach(customisation_ice, id: \.element.key) { c in
-                                HStack {
-                                    Text("\(c.element.key)").padding(.horizontal)
-                                    Spacer()
-                                    Text("\(c.element.value)").padding(.horizontal)
-                                }
-                            }
-                        }
-                        .background(Color.pink)
-                        .cornerRadius(8)
-                        
-                        //c3. customisation 3: add pudding
-                        VStack {
-                                    Toggle("Pudding?", isOn: $hasPudding)
-
-                                    if hasPudding {
-                                        Text("Pudding!")
-                                        Text("+ $0.90")
-                                    }
-                                }
-                    }.padding()
-                    
-                    Spacer()
-                    
+                    }
                 }
             }
             VStack {
