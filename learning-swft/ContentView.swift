@@ -204,6 +204,10 @@ struct CustomisationPage: View {
         "Less sweet":"Free",
         "More sweet":"Free",
        ].enumerated().map { $0 })
+    let customisation_ice = Array([
+        "Less ice":"+ $0.70",
+        "More ice":"Free",
+       ].enumerated().map { $0 })
     var body: some View {
         VStack {
             ScrollView {
