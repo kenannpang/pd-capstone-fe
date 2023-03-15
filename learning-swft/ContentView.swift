@@ -491,7 +491,9 @@ struct CustomisationPage: View {
             }
             VStack {
                 NavigationLink(
-                    destination: ContentView(),
+// Originally navigates to cart page. This is temporarily navigating to hard coded cart page with bubble tea. (hidden until required)
+//                    destination: ContentView(),
+                    destination: ContentView2(),
                     label: {
                         Text("Add to cart")
                             .font(.headline)
