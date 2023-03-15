@@ -240,21 +240,13 @@ struct CustomisationPage: View {
                                 Spacer()
                             }
                             .padding()
-                            HStack {
-                                Text("o <Option_1>")
-                                Spacer()
-                                Text("<Price_1>")
-                            }.padding()
-                            HStack {
-                                Text("o <Option_2>")
-                                Spacer()
-                                Text("<Price_2>")
-                            }.padding()
-                            HStack {
-                                Text("o <Option_3>")
-                                Spacer()
-                                Text("<Price_3>")
-                            }.padding()
+                            ForEach(customisation_sugar_level, id: \.element.key) { c in
+                                HStack {
+                                    Text("\(c.element.key)").padding(.horizontal)
+                                    Spacer()
+                                    Text("\(c.element.value)").padding(.horizontal)
+                                }
+                            }
                         }
                         .background(Color.pink)
                         .cornerRadius(8)
