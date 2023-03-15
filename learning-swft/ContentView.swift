@@ -228,7 +228,7 @@ struct CustomisationPage: View {
             ScrollView {
                 VStack {
                     // Listing picture
-                    Image(systemName: "photo")
+                    Image("fp-drink-gong-cha-pearl-milk-tea")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 200)
@@ -236,11 +236,14 @@ struct CustomisationPage: View {
                     // Customisation options
                     VStack {
                         HStack {
-                            Text("Title").font(.headline)
+                            Text("Pearl Milk Tea").font(.title)
                             Spacer()
-                            Text("S$ 16.80")
+                            Text("$ 5.30").font(.headline)
                         }
-                        
+                        HStack {
+                            Text("Delicious boba with milk tea").font(.subheadline)
+                            Spacer()
+                        }
                         //c1. customisation 1: calls customisation_sugar_level
                         VStack {
                             HStack {
