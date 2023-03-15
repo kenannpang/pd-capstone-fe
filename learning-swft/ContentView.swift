@@ -208,6 +208,7 @@ struct CustomisationPage: View {
         "Less ice":"+ $0.70",
         "More ice":"Free",
        ].enumerated().map { $0 })
+    @State private var showGreeting = true
     var body: some View {
         VStack {
             ScrollView {
@@ -283,6 +284,15 @@ struct CustomisationPage: View {
                         }
                         .background(Color.pink)
                         .cornerRadius(8)
+                        
+                        //c3
+                        VStack {
+                                    Toggle("Show welcome message", isOn: $showGreeting)
+
+                                    if showGreeting {
+                                        Text("Hello World!")
+                                    }
+                                }
                     }.padding()
                     
                     Spacer()
