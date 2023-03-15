@@ -214,6 +214,221 @@ struct ContentView: View {
     }
 }
 
+//content view 2 added for mock up prep. hard coded navigation when ordered pearl milk tea
+struct ContentView2: View {
+    @State var order_count : Int = 1
+    let charges = Array([
+        "Subtotal":"$25.60",
+        "Delivery fee":"$3.00",
+        "Platform fee":"$0.40"
+       ].enumerated().map { $0 })
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        NavigationView {
+            VStack {
+                HStack {
+                    TextField("Search", text: .constant(""))
+                        .padding(8)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(8)
+                    Button(action: {}) {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.pink)
+                            .cornerRadius(8)
+                    }
+                }
+                .padding()
+                
+                ScrollView(.vertical) {
+                    //order component, repeats a Horizontal container with qty, img, listing title, description, and price
+                    VStack {
+                        ForEach(1...order_count, id: \.self) { _ in
+                            HStack {
+                                Text("Qty: 1").font(.headline)
+                                Spacer()
+                                Image("fp-food-kfc-2pcs")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: UIScreen.main.bounds.width/5)
+                                    .cornerRadius(8)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("2 pcs Chicken Meal")
+                                        .font(.headline)
+                                        .padding(.horizontal)
+                                    Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
+                                        .font(.subheadline)
+                                        .padding(.horizontal)
+                                }
+                                Spacer()
+                                Text("$12.60")
+                            }
+                        }
+                        
+                    }
+                    .padding()
+// Increment button, to manually increase the number of orders in order component (hidden until required)
+//                    Button(action:{
+//                        self.order_count += 1
+//                    }) {
+//                        Text("Increase order: \(order_count)")
+//                    }
+//                    .foregroundColor(.white)
+//                    .padding(8)
+//                    .background(Color.pink)
+//                    .cornerRadius(8)
+                    Rectangle()
+                        .fill(.gray)
+                        .frame(height: 8)
+                        .padding(.vertical)
+                    
+                    
+                    VStack {
+                        VStack{
+                            HStack {
+                                Text("Bubble Tea? Bubble Tea...")
+                                    .font(.headline)
+                                Spacer()
+                            }
+                            HStack {
+                                Text("(Beta) Complete your meal, no additional delivery charge")
+                                    .font(.subheadline)
+                                Spacer()
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        ScrollView(.horizontal) {
+                            HStack{
+                                ForEach(1...3, id: \.self) { _ in
+                                    VStack {
+                                        Spacer()
+                                        Image("fp-drink-gong-cha-pearl-milk-tea")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: .infinity)
+                                            .cornerRadius(8)
+                                        HStack {
+                                            Text("$10.00")
+                                                .font(.headline)
+                                            NavigationLink("+", destination: CustomisationPage())
+                                                .font(.title2)
+                                                .foregroundColor(.white)
+                                                .padding(.horizontal, 10)
+                                                .padding(.vertical, 3)
+                                                .background(Color.pink)
+                                                .cornerRadius(80)
+                                                .frame(maxWidth: .infinity)
+                                                .font(.subheadline)
+                                        }
+                                        HStack {
+                                            Text("Listing Title")
+                                            Spacer()
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        
+                                        Spacer()
+                                        
+                                        
+                                        Spacer(minLength: 4)
+                                    }
+                                }
+
+                                .padding(.vertical, 4)
+                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 1.25)
+                                .cornerRadius(8)
+                                .padding(.horizontal,4)
+                            }
+                            .padding(.horizontal)
+                            
+                            HStack{
+                                ForEach(1...3, id: \.self) { _ in
+                                    
+                                }
+
+                                .padding(.vertical, 4)
+                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
+                                .cornerRadius(8)
+                                .padding(.horizontal,4)
+                            }
+                            .padding(.horizontal)
+                        }
+// Pink Banner (hidden until required)
+//                        HStack {
+//                            VStack {
+//                                Text("Hello")
+//                                    .font(.headline)
+//                                Text("Hello")
+//                                    .font(.subheadline)
+//                                    .foregroundColor(.white)
+//                            }
+//                            .padding()
+//
+//                            Spacer()
+//
+//                            VStack {
+//                                Image(systemName: "photo")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
+//                                    .cornerRadius(8)
+//                            }
+//                            .padding()
+//                        }
+//                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
+//                        .background(Color.pink)
+                        
+                        VStack {
+                            ForEach(charges, id: \.element.key) { c in
+                                HStack {
+                                    Text("\(c.element.key)")
+                                    Spacer()
+                                    Text("\(c.element.value)")
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                }
+                VStack {
+                    Rectangle()
+                        .fill(.gray)
+                        .frame(height: 8)
+                    HStack {
+                        Text("Total")
+                            .font(.headline)
+                            .padding()
+                        Spacer()
+                        Text("S$ 26.00")
+                            .font(.headline)
+                            .padding()
+                    }
+                    NavigationLink(
+                        destination: DoneView(),
+                        label: {
+                            Text("Make Payment")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .background(Color.pink)
+                                .cornerRadius(8)
+                                
+                        })
+                }
+            }
+        }
+    }
+}
+
 struct CustomisationPage: View {
     let customisation_sugar_level = Array([
         "Less sweet":"Free",
@@ -435,6 +650,7 @@ struct StratchView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        ContentView2()
         CustomisationPage()
         DoneView()
         StratchView()
