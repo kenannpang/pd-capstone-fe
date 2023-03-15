@@ -71,12 +71,12 @@ struct ContentView: View {
                     VStack {
                         VStack{
                             HStack {
-                                Text("Popular with your order")
+                                Text("Bubble Tea? Bubble Tea...")
                                     .font(.headline)
                                 Spacer()
                             }
                             HStack {
-                                Text("Other customers also bought these")
+                                Text("(Beta) Complete your meal, no additional delivery charge")
                                     .font(.subheadline)
                                 Spacer()
                             }
