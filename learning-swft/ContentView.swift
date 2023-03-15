@@ -226,10 +226,10 @@ struct CustomisationPage: View {
                             Text("S$ 16.80")
                         }
                         
-                        //this is repeatable options
+                        //c1. customisation 1: calls customisation_sugar_level
                         VStack {
                             HStack {
-                                Text("Chocie of Main [Dilmah Mix and Match Bundle]").font(.headline)
+                                Text("Sugar Level").font(.headline)
                                 Spacer()
                                 Text("Required")
                                     .font(.headline)
@@ -255,7 +255,34 @@ struct CustomisationPage: View {
                         .background(Color.pink)
                         .cornerRadius(8)
                         
-                        
+                        // c2 start. customisation 2: calls customisation_ice
+                        VStack {
+                            HStack {
+                                Text("Ice Amount").font(.headline)
+                                Spacer()
+                                Text("Required")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.gray)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                            HStack {
+                                Text("Select 1").font(.subheadline)
+                                Spacer()
+                            }
+                            .padding()
+                            ForEach(customisation_ice, id: \.element.key) { c in
+                                HStack {
+                                    Text("\(c.element.key)").padding(.horizontal)
+                                    Spacer()
+                                    Text("\(c.element.value)").padding(.horizontal)
+                                }
+                            }
+                        }
+                        .background(Color.pink)
+                        .cornerRadius(8)
                     }.padding()
                     
                     Spacer()
