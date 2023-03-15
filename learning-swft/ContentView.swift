@@ -152,13 +152,12 @@ struct ContentView: View {
 //                        .background(Color.pink)
                         
                         VStack {
-                            ForEach(1...5, id: \.self) { index in
+                            ForEach(charges, id: \.element.key) { c in
                                 HStack {
-                                    Text("#Fee \(index)")
+                                    Text("\(c.element.key)")
                                     Spacer()
-                                    Text("S$ <Price_\(index)>")
+                                    Text("\(c.element.value)")
                                 }
-                                .padding()
                             }
                         }
                         .padding()
