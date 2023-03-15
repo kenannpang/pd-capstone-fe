@@ -85,10 +85,10 @@ struct ContentView: View {
                         
                         ScrollView(.horizontal) {
                             HStack{
-                                ForEach(1...10, id: \.self) { _ in
+                                ForEach(1...3, id: \.self) { _ in
                                     VStack {
                                         Spacer()
-                                        Image(systemName: "photo")
+                                        Image("fp-drink-gong-cha-pearl-milk-tea")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: .infinity)
