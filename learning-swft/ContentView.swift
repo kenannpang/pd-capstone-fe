@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State var order_count : Int = 1
     let charges = Array([
-        "Subtotal":"$25.60",
+        "Subtotal":"$12.60",
         "Delivery fee":"$3.00",
         "Platform fee":"$0.40"
        ].enumerated().map { $0 })
@@ -95,7 +95,7 @@ struct ContentView: View {
                                             .frame(maxWidth: .infinity)
                                             .cornerRadius(8)
                                         HStack {
-                                            Text("$10.00")
+                                            Text("$5.30")
                                                 .font(.headline)
                                             NavigationLink("+", destination: CustomisationPage())
                                                 .font(.title2)
@@ -108,7 +108,7 @@ struct ContentView: View {
                                                 .font(.subheadline)
                                         }
                                         HStack {
-                                            Text("Listing Title")
+                                            Text("Pearl Milk Tea")
                                             Spacer()
                                         }
                                         
