@@ -588,12 +588,16 @@ struct StratchView: View {
                 
                 ScrollView(.vertical) {
                     ZStack {
+                        Image("fp-customisation-page-hard-coded")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            //.frame(width: UIScreen.main.bounds.width/5)
+                            .cornerRadius(8)
                         Image("fp-coming-soon")
-                        VStack() {
-                            Text("Start scratch")
-                            
-                            Text("End scratch")
-                        }
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            //.frame(width: UIScreen.main.bounds.width/5)
+                            .cornerRadius(8)
                     }
                     VStack() {
                         Text("Start scratch")
