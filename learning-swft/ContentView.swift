@@ -65,7 +65,7 @@ struct ContentView: View {
 //                    .cornerRadius(8)
                     Rectangle()
                         .fill(.gray)
-                        .frame(height: 8)
+                        .frame(height: 1)
                         .padding(.vertical)
                     
                     
@@ -181,7 +181,7 @@ struct ContentView: View {
                 VStack {
                     Rectangle()
                         .fill(.gray)
-                        .frame(height: 8)
+                        .frame(height: 1)
                     HStack {
                         Text("Total")
                             .font(.headline)
@@ -296,7 +296,7 @@ struct ContentView2: View {
 //                    .cornerRadius(8)
                     Rectangle()
                         .fill(.gray)
-                        .frame(height: 8)
+                        .frame(height: 1)
                         .padding(.vertical)
                     
                     
@@ -352,7 +352,7 @@ struct ContentView2: View {
                 VStack {
                     Rectangle()
                         .fill(.gray)
-                        .frame(height: 8)
+                        .frame(height: 1)
                     HStack {
                         Text("Total")
                             .font(.headline)
