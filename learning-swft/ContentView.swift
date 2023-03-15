@@ -33,21 +33,21 @@ struct ContentView: View {
                             HStack {
                                 Text("Qty: 1").font(.headline)
                                 Spacer()
-                                Image(systemName: "photo")
+                                Image("fp-food-kfc-2pcs")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: UIScreen.main.bounds.width/5)
                                     .cornerRadius(8)
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Listing Title")
+                                    Text("2 pcs Chicken Meal")
                                         .font(.headline)
                                         .padding(.horizontal)
-                                    Text("Listing Description")
+                                    Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
                                         .font(.subheadline)
                                         .padding(.horizontal)
                                 }
                                 Spacer()
-                                Text("$10.00")
+                                Text("$12.60")
                             }
                         }
                         
