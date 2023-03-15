@@ -369,13 +369,6 @@ struct DoneView: View {
 }
 
 struct StratchView: View {
-    @State var count : Int = 0
-    var a = 100
-    let people = Array([
-           "Abby": "Hello",
-           "Ben": "ni hao",
-           "Charlie": "goodbye"
-       ].enumerated().map { $0 })
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -393,14 +386,8 @@ struct StratchView: View {
                 
                 ScrollView(.vertical) {
                     VStack() {
-                        Text("try here")
-//                        ForEach(0..<a, id: \.self) {_ in
-//                            Text("hi")
-//                        }
-                        ForEach(people, id: \.element.key) { person in
-                            Text("\(person.element.key) says \(person.element.value)")
-                        }
-                        Text("done")
+                        Text("Start scratch")
+                        Text("End scratch")
                     }
                     .padding()
                 }
