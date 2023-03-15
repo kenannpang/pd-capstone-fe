@@ -515,6 +515,137 @@ struct CustomisationPage: View {
     }
 }
 
+//Customisationpage2 is a hard coded, temporal page for our mock up presentation (remove after presentation)
+struct CustomisationPage2: View {
+    let customisation_sugar_level = Array([
+        "Less sweet":"Free",
+        "More sweet":"Free",
+       ].enumerated().map { $0 })
+    let customisation_ice = Array([
+        "Less ice":"+ $0.70",
+        "More ice":"Free",
+       ].enumerated().map { $0 })
+    @State private var hasPudding = true
+    var body: some View {
+        VStack {
+            ScrollView {
+                VStack {
+                    // Listing picture
+                    Image("fp-drink-gong-cha-pearl-milk-tea")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                    
+                    // Customisation options
+                    VStack {
+                        HStack {
+                            Text("Pearl Milk Tea").font(.title)
+                            Spacer()
+                            Text("$ 5.30").font(.headline)
+                        }
+                        HStack {
+                            Text("Delicious boba with milk tea").font(.subheadline)
+                            Spacer()
+                        }
+                        //c1. customisation 1: calls customisation_sugar_level
+                        VStack {
+                            HStack {
+                                Text("Sugar Level").font(.headline)
+                                Spacer()
+                                Text("Required")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.gray)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                            HStack {
+                                Text("Select 1").font(.subheadline)
+                                Spacer()
+                            }
+                            .padding()
+                            ForEach(customisation_sugar_level, id: \.element.key) { c in
+                                HStack {
+                                    Text("\(c.element.key)").padding(.horizontal)
+                                    Spacer()
+                                    Text("\(c.element.value)").padding(.horizontal)
+                                }
+                            }
+                        }
+                        .background(Color.pink)
+                        .cornerRadius(8)
+                        
+                        // c2 start. customisation 2: calls customisation_ice
+                        VStack {
+                            HStack {
+                                Text("Ice Amount").font(.headline)
+                                Spacer()
+                                Text("Required")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.gray)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                            HStack {
+                                Text("Select 1").font(.subheadline)
+                                Spacer()
+                            }
+                            .padding()
+                            ForEach(customisation_ice, id: \.element.key) { c in
+                                HStack {
+                                    Text("\(c.element.key)").padding(.horizontal)
+                                    Spacer()
+                                    Text("\(c.element.value)").padding(.horizontal)
+                                }
+                            }
+                        }
+                        .background(Color.pink)
+                        .cornerRadius(8)
+                        
+                        //c3. customisation 3: add pudding
+                        VStack {
+                                    Toggle("Pudding?", isOn: $hasPudding)
+
+                                    if hasPudding {
+                                        Text("Pudding!")
+                                        Text("+ $0.90")
+                                    }
+                                }
+                    }.padding()
+                    
+                    Spacer()
+                    
+                }
+            }
+            VStack {
+                NavigationLink(
+// Originally navigates to cart page. This is temporarily navigating to hard coded cart page with bubble tea. (hidden until required)
+//                    destination: ContentView(),
+                    destination: ContentView2(),
+                    label: {
+                        Text("Add to cart")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .background(Color.pink)
+                            .cornerRadius(8)
+                            
+                    })
+            }
+        }
+        
+    }
+}
+
 
 struct RadioButton: View {
     @Binding var isSelected: Bool
@@ -620,6 +751,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
         ContentView2()
         CustomisationPage()
+        CustomisationPage2()
         DoneView()
         StratchView()
     }
