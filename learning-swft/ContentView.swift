@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var order_count : Int = 2
+    let charges = ["Subtotal":"$25.60", "Delivery fee":"$3.00", "Platform fee":"$0.40"]
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -328,7 +329,11 @@ struct DoneView: View {
 struct StratchView: View {
     @State var count : Int = 0
     var a = 100
-    let people = ["Abby", "Ben", "Charlie", "Dilly"]
+    let people = [
+           "Abby": "Hello",
+           "Ben": "ni hao",
+           "Charlie": "goodbye"
+       ]
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -350,8 +355,8 @@ struct StratchView: View {
 //                        ForEach(0..<a, id: \.self) {_ in
 //                            Text("hi")
 //                        }
-                        ForEach(people, id: \.self) { person in
-                            Text(person)
+                        ForEach(people.sorted(by: <), id: \.key) { person in
+                            Text("\(person.key) says \(person.value)")
                         }
                         Text("done")
                     }
