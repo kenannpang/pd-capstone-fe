@@ -244,28 +244,44 @@ struct ContentView2: View {
                 ScrollView(.vertical) {
                     //order component, repeats a Horizontal container with qty, img, listing title, description, and price
                     VStack {
-                        ForEach(1...order_count, id: \.self) { _ in
-                            HStack {
-                                Text("Qty: 1").font(.headline)
-                                Spacer()
-                                Image("fp-food-kfc-2pcs")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: UIScreen.main.bounds.width/5)
-                                    .cornerRadius(8)
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("2 pcs Chicken Meal")
-                                        .font(.headline)
-                                        .padding(.horizontal)
-                                    Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
-                                        .font(.subheadline)
-                                        .padding(.horizontal)
-                                }
-                                Spacer()
-                                Text("$12.60")
+                        HStack {
+                            Text("Qty: 1").font(.headline)
+                            Spacer()
+                            Image("fp-food-kfc-2pcs")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width/5)
+                                .cornerRadius(8)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("2 pcs Chicken Meal")
+                                    .font(.headline)
+                                    .padding(.horizontal)
+                                Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
+                                    .font(.subheadline)
+                                    .padding(.horizontal)
                             }
+                            Spacer()
+                            Text("$12.60")
                         }
-                        
+                        HStack {
+                            Text("Qty: 1").font(.headline)
+                            Spacer()
+                            Image("fp-drink-gong-cha-pearl-milk-tea")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width/5)
+                                .cornerRadius(8)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("Pearl Milk Tea")
+                                    .font(.headline)
+                                    .padding(.horizontal)
+                                Text("Delicious boba with milk tea")
+                                    .font(.subheadline)
+                                    .padding(.horizontal)
+                            }
+                            Spacer()
+                            Text("$5.30")
+                        }
                     }
                     .padding()
 // Increment button, to manually increase the number of orders in order component (hidden until required)
