@@ -200,6 +200,10 @@ struct ContentView: View {
 }
 
 struct CustomisationPage: View {
+    let customisation_sugar_level = Array([
+        "Less sweet":"Free",
+        "More sweet":"Free",
+       ].enumerated().map { $0 })
     var body: some View {
         VStack {
             ScrollView {
