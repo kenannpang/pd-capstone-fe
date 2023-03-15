@@ -398,6 +398,9 @@ struct StratchView: View {
                 ScrollView(.vertical) {
                     VStack() {
                         Text("Start scratch")
+                        Image("fp-food-noodles")
+                                    .resizable()
+                                    .scaledToFit()
                         Text("End scratch")
                     }
                     .padding()
