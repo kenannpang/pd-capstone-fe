@@ -157,21 +157,20 @@ struct ContentView: View {
                             }
                         }
                         .padding()
-                        
-                        
-                        NavigationLink(
-                            destination: DoneView(),
-                            label: {
-                                Text("Done")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color.pink)
-                                    .cornerRadius(8)
-                            })
-                            .padding()
                     }
                 }
+                NavigationLink(
+                    destination: DoneView(),
+                    label: {
+                        Text("Make Payment")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.pink)
+                            .cornerRadius(8)
+                            .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
+                    })
+                    .padding()
             }
         }
     }
