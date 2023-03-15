@@ -2,7 +2,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State var order_count : Int = 2
-    let charges = ["Subtotal":"$25.60", "Delivery fee":"$3.00", "Platform fee":"$0.40"]
+    let charges = Array([
+        "Subtotal":"$25.60",
+        "Delivery fee":"$3.00",
+        "Platform fee":"$0.40"
+       ].enumerated().map { $0 })
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -367,6 +371,7 @@ struct StratchView: View {
         }
     }
 }
+
 
 
 
