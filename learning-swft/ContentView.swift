@@ -369,6 +369,7 @@ struct DoneView: View {
 }
 
 struct StratchView: View {
+    @State private var showGreeting = true
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -387,6 +388,13 @@ struct StratchView: View {
                 ScrollView(.vertical) {
                     VStack() {
                         Text("Start scratch")
+                        VStack {
+                                    Toggle("Show welcome message", isOn: $showGreeting)
+
+                                    if showGreeting {
+                                        Text("Hello World!")
+                                    }
+                                }
                         Text("End scratch")
                     }
                     .padding()
