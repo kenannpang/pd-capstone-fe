@@ -587,11 +587,17 @@ struct StratchView: View {
                 
                 
                 ScrollView(.vertical) {
+                    ZStack {
+                        Image("fp-coming-soon")
+                        VStack() {
+                            Text("Start scratch")
+                            
+                            Text("End scratch")
+                        }
+                    }
                     VStack() {
                         Text("Start scratch")
-                        Image("fp-food-noodles")
-                                    .resizable()
-                                    .scaledToFit()
+                        
                         Text("End scratch")
                     }
                     .padding()
