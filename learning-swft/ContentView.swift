@@ -201,76 +201,88 @@ struct ContentView: View {
 
 struct CustomisationPage: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                // Listing picture
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 200)
-                
-                // Customisation options
+        VStack {
+            ScrollView {
                 VStack {
-                    HStack {
-                        Text("Title").font(.headline)
-                        Spacer()
-                        Text("S$ 16.80")
-                    }
+                    // Listing picture
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
                     
-                    //this is repeatable options
+                    // Customisation options
                     VStack {
                         HStack {
-                            Text("Chocie of Main [Dilmah Mix and Match Bundle]").font(.headline)
+                            Text("Title").font(.headline)
                             Spacer()
-                            Text("Required")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.gray)
-                                .cornerRadius(8)
+                            Text("S$ 16.80")
                         }
-                        .padding()
-                        HStack {
-                            Text("Select 1").font(.subheadline)
-                            Spacer()
+                        
+                        //this is repeatable options
+                        VStack {
+                            HStack {
+                                Text("Chocie of Main [Dilmah Mix and Match Bundle]").font(.headline)
+                                Spacer()
+                                Text("Required")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.gray)
+                                    .cornerRadius(8)
+                            }
+                            .padding()
+                            HStack {
+                                Text("Select 1").font(.subheadline)
+                                Spacer()
+                            }
+                            .padding()
+                            HStack {
+                                Text("o <Option_1>")
+                                Spacer()
+                                Text("<Price_1>")
+                            }.padding()
+                            HStack {
+                                Text("o <Option_2>")
+                                Spacer()
+                                Text("<Price_2>")
+                            }.padding()
+                            HStack {
+                                Text("o <Option_3>")
+                                Spacer()
+                                Text("<Price_3>")
+                            }.padding()
                         }
-                        .padding()
-                        HStack {
-                            Text("o <Option_1>")
-                            Spacer()
-                            Text("<Price_1>")
-                        }.padding()
-                        HStack {
-                            Text("o <Option_2>")
-                            Spacer()
-                            Text("<Price_2>")
-                        }.padding()
-                        HStack {
-                            Text("o <Option_3>")
-                            Spacer()
-                            Text("<Price_3>")
-                        }.padding()
-                    }
-                    .background(Color.pink)
-                    .cornerRadius(8)
+                        .background(Color.pink)
+                        .cornerRadius(8)
+                        
+                        
+                    }.padding()
                     
+                    Spacer()
                     
-                }.padding()
-                
-                Spacer()
+                }
+            }
+            VStack {
                 NavigationLink(
                     destination: ContentView(),
                     label: {
-                        Text("Add to Cart")
+                        Text("Add to cart")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
+                            .padding(.horizontal)
                             .background(Color.pink)
                             .cornerRadius(8)
+                            
                     })
-                    .padding()
             }
         }
+        
     }
 }
 
