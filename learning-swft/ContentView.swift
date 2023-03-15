@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var order_count : Int = 2
+    @State var order_count : Int = 1
     let charges = Array([
         "Subtotal":"$25.60",
         "Delivery fee":"$3.00",
@@ -53,15 +53,16 @@ struct ContentView: View {
                         
                     }
                     .padding()
-                    Button(action:{
-                        self.order_count += 1
-                    }) {
-                        Text("Increase order: \(order_count)")
-                    }
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Color.pink)
-                    .cornerRadius(8)
+// Increment button, to manually increase the number of orders in order component (hidden until required)
+//                    Button(action:{
+//                        self.order_count += 1
+//                    }) {
+//                        Text("Increase order: \(order_count)")
+//                    }
+//                    .foregroundColor(.white)
+//                    .padding(8)
+//                    .background(Color.pink)
+//                    .cornerRadius(8)
                     Rectangle()
                         .fill(.gray)
                         .frame(height: 8)
@@ -140,7 +141,7 @@ struct ContentView: View {
                             }
                             .padding(.horizontal)
                         }
-// Pink Banner
+// Pink Banner (hidden until required)
 //                        HStack {
 //                            VStack {
 //                                Text("Hello")
