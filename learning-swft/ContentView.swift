@@ -208,7 +208,7 @@ struct CustomisationPage: View {
         "Less ice":"+ $0.70",
         "More ice":"Free",
        ].enumerated().map { $0 })
-    @State private var showGreeting = true
+    @State private var hasPudding = true
     var body: some View {
         VStack {
             ScrollView {
@@ -285,12 +285,13 @@ struct CustomisationPage: View {
                         .background(Color.pink)
                         .cornerRadius(8)
                         
-                        //c3
+                        //c3. customisation 3: add pudding
                         VStack {
-                                    Toggle("Show welcome message", isOn: $showGreeting)
+                                    Toggle("Pudding?", isOn: $hasPudding)
 
-                                    if showGreeting {
-                                        Text("Hello World!")
+                                    if hasPudding {
+                                        Text("Pudding!")
+                                        Text("+ $0.90")
                                     }
                                 }
                     }.padding()
