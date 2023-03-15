@@ -3,9 +3,9 @@ import SwiftUI
 struct ContentView: View {
     @State var order_count : Int = 1
     let charges = Array([
-        "Subtotal":"$12.60",
-        "Delivery fee":"$3.00",
-        "Platform fee":"$0.40"
+        "Subtotal":"$ 12.60",
+        "Delivery fee":"$ 3.00",
+        "Platform fee":"$ 0.40"
        ].enumerated().map { $0 })
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
@@ -47,7 +47,7 @@ struct ContentView: View {
                                         .padding(.horizontal)
                                 }
                                 Spacer()
-                                Text("$12.60")
+                                Text("$ 12.60")
                             }
                         }
                         
@@ -97,7 +97,7 @@ struct ContentView: View {
                                         HStack {
                                             Text("$5.30")
                                                 .font(.headline)
-                                            NavigationLink("+", destination: CustomisationPage())
+                                            NavigationLink("+", destination: CustomisationPage2())
                                                 .font(.title2)
                                                 .foregroundColor(.white)
                                                 .padding(.horizontal, 10)
@@ -187,7 +187,7 @@ struct ContentView: View {
                             .font(.headline)
                             .padding()
                         Spacer()
-                        Text("S$ 26.00")
+                        Text("$ 16.00")
                             .font(.headline)
                             .padding()
                     }
@@ -218,9 +218,9 @@ struct ContentView: View {
 struct ContentView2: View {
     @State var order_count : Int = 1
     let charges = Array([
-        "Subtotal":"$17.90",
-        "Delivery fee":"$3.00",
-        "Platform fee":"$0.40"
+        "Subtotal":"$ 17.90",
+        "Delivery fee":"$ 3.00",
+        "Platform fee":"$ 0.40"
        ].enumerated().map { $0 })
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
@@ -261,7 +261,7 @@ struct ContentView2: View {
                                     .padding(.horizontal)
                             }
                             Spacer()
-                            Text("$12.60")
+                            Text("$ 12.60")
                         }
                         HStack {
                             Text("Qty: 1").font(.headline)
@@ -280,7 +280,7 @@ struct ContentView2: View {
                                     .padding(.horizontal)
                             }
                             Spacer()
-                            Text("$5.30")
+                            Text("$ 5.30")
                         }
                     }
                     .padding()
@@ -358,7 +358,7 @@ struct ContentView2: View {
                             .font(.headline)
                             .padding()
                         Spacer()
-                        Text("S$ 21.30")
+                        Text("$ 21.30")
                             .font(.headline)
                             .padding()
                     }
