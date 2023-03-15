@@ -60,6 +60,7 @@ struct ContentView: View {
                     Rectangle()
                         .fill(.gray)
                         .frame(height: 8)
+                        .padding(.vertical)
                     
                     
                     VStack {
@@ -309,6 +310,7 @@ struct DoneView: View {
 struct StratchView: View {
     @State var count : Int = 0
     var a = 100
+    let people = ["Abby", "Ben", "Charlie", "Dilly"]
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -327,9 +329,13 @@ struct StratchView: View {
                 ScrollView(.vertical) {
                     VStack() {
                         Text("try here")
-                        ForEach(0..<a, id: \.self) {_ in
-                            Text("hi")
+//                        ForEach(0..<a, id: \.self) {_ in
+//                            Text("hi")
+//                        }
+                        ForEach(people, id: \.self) { person in
+                            Text(person)
                         }
+                        Text("done")
                     }
                     .padding()
                 }
