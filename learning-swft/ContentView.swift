@@ -159,18 +159,37 @@ struct ContentView: View {
                         .padding()
                     }
                 }
-                NavigationLink(
-                    destination: DoneView(),
-                    label: {
-                        Text("Make Payment")
+                VStack {
+                    Rectangle()
+                        .fill(.gray)
+                        .frame(height: 8)
+                    HStack {
+                        Text("Total")
                             .font(.headline)
-                            .foregroundColor(.white)
                             .padding()
-                            .background(Color.pink)
-                            .cornerRadius(8)
-                            .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
-                    })
-                    .padding()
+                        Spacer()
+                        Text("S$ 26.00")
+                            .font(.headline)
+                            .padding()
+                    }
+                    NavigationLink(
+                        destination: DoneView(),
+                        label: {
+                            Text("Make Payment")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .padding(.horizontal)
+                                .background(Color.pink)
+                                .cornerRadius(8)
+                                
+                        })
+                }
             }
         }
     }
