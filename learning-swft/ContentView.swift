@@ -218,7 +218,7 @@ struct ContentView: View {
 struct ContentView2: View {
     @State var order_count : Int = 1
     let charges = Array([
-        "Subtotal":"$25.60",
+        "Subtotal":"$17.90",
         "Delivery fee":"$3.00",
         "Platform fee":"$0.40"
        ].enumerated().map { $0 })
@@ -302,69 +302,9 @@ struct ContentView2: View {
                     
                     VStack {
                         VStack{
-                            HStack {
-                                Text("Bubble Tea? Bubble Tea...")
-                                    .font(.headline)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("(Beta) Complete your meal, no additional delivery charge")
-                                    .font(.subheadline)
-                                Spacer()
-                            }
-                        }
-                        .padding(.horizontal)
-                        
-                        ScrollView(.horizontal) {
                             HStack{
                                 ForEach(1...3, id: \.self) { _ in
-                                    VStack {
-                                        Spacer()
-                                        Image("fp-drink-gong-cha-pearl-milk-tea")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: .infinity)
-                                            .cornerRadius(8)
-                                        HStack {
-                                            Text("$10.00")
-                                                .font(.headline)
-                                            NavigationLink("+", destination: CustomisationPage())
-                                                .font(.title2)
-                                                .foregroundColor(.white)
-                                                .padding(.horizontal, 10)
-                                                .padding(.vertical, 3)
-                                                .background(Color.pink)
-                                                .cornerRadius(80)
-                                                .frame(maxWidth: .infinity)
-                                                .font(.subheadline)
-                                        }
-                                        HStack {
-                                            Text("Listing Title")
-                                            Spacer()
-                                        }
-                                        
-                                        Spacer()
-                                        
-                                        
-                                        Spacer()
-                                        
-                                        
-                                        Spacer(minLength: 4)
-                                    }
                                 }
-
-                                .padding(.vertical, 4)
-                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 1.25)
-                                .cornerRadius(8)
-                                .padding(.horizontal,4)
-                            }
-                            .padding(.horizontal)
-                            
-                            HStack{
-                                ForEach(1...3, id: \.self) { _ in
-                                    
-                                }
-
                                 .padding(.vertical, 4)
                                 .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
                                 .cornerRadius(8)
@@ -418,7 +358,7 @@ struct ContentView2: View {
                             .font(.headline)
                             .padding()
                         Spacer()
-                        Text("S$ 26.00")
+                        Text("S$ 21.30")
                             .font(.headline)
                             .padding()
                     }
