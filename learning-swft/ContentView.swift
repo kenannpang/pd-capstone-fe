@@ -93,34 +93,48 @@ struct ContentView: View {
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: .infinity)
                                             .cornerRadius(8)
-                                        VStack(alignment: .leading, spacing: 4) {
-                                            Text("Listing Title")
+                                        HStack {
+                                            Text("$10.00")
                                                 .font(.headline)
-                                                .padding(.horizontal)
-                                            Text("Listing Description")
+                                            NavigationLink("+", destination: CustomisationPage())
+                                                .font(.title2)
+                                                .foregroundColor(.white)
+                                                .padding(.horizontal, 10)
+                                                .padding(.vertical, 3)
+                                                .background(Color.pink)
+                                                .cornerRadius(80)
+                                                .frame(maxWidth: .infinity)
                                                 .font(.subheadline)
-                                                .padding(.horizontal)
                                         }
-                                        Spacer()
-                                        Text("$10.00")
+                                        HStack {
+                                            Text("Listing Title")
+                                            Spacer()
+                                        }
                                         
                                         Spacer()
-                                        NavigationLink("Learn More", destination: CustomisationPage())
-                                            .font(.caption)
-                                            .foregroundColor(.white)
-                                            .padding(.horizontal, 8)
-                                            .padding(.vertical, 4)
-                                            .background(Color.pink)
-                                            .cornerRadius(8)
-                                            .frame(maxWidth: .infinity)
+                                        
+                                        
+                                        Spacer()
+                                        
                                         
                                         Spacer(minLength: 4)
                                     }
                                 }
 
                                 .padding(.vertical, 4)
+                                .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 1.25)
+                                .cornerRadius(8)
+                                .padding(.horizontal,4)
+                            }
+                            .padding(.horizontal)
+                            
+                            HStack{
+                                ForEach(1...3, id: \.self) { _ in
+                                    
+                                }
+
+                                .padding(.vertical, 4)
                                 .frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.width / 2.5)
-                                .background(Color(.systemGray5))
                                 .cornerRadius(8)
                                 .padding(.horizontal,4)
                             }
