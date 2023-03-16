@@ -27,6 +27,9 @@ struct ContentView: View {
                 .padding()
                 
                 ScrollView(.vertical) {
+                    Image("fp-cart-page-rider")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                     //order component, repeats a Horizontal container with qty, img, listing title, description, and price
                     VStack {
                         ForEach(1...order_count, id: \.self) { _ in
@@ -676,6 +679,13 @@ struct StratchView: View {
                             .cornerRadius(80)
                             .frame(maxWidth: .infinity)
                             .font(.subheadline)
+                        
+                        Image("fp-cart-page-rider")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        HStack {
+                            
+                        }
                         
                         Text("End scratch")
                     }
