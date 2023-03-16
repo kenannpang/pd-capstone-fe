@@ -20,7 +20,7 @@ struct ContentView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.white)
                             .padding(8)
-                            .background(Color.pink)
+                            .background(Color.cerisered)
                             .cornerRadius(8)
                     }
                 }
@@ -45,6 +45,8 @@ struct ContentView: View {
                                     Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
                                         .font(.subheadline)
                                         .padding(.horizontal)
+                                        .foregroundColor(.dustygray)
+                                        
                                 }
                                 Spacer()
                                 Text("$ 12.60")
@@ -61,10 +63,10 @@ struct ContentView: View {
 //                    }
 //                    .foregroundColor(.white)
 //                    .padding(8)
-//                    .background(Color.pink)
+//                    .background(Color.cerisered)
 //                    .cornerRadius(8)
                     Rectangle()
-                        .fill(.gray)
+                        .fill(Color.silver)
                         .frame(height: 1)
                         .padding(.vertical)
                     
@@ -102,7 +104,7 @@ struct ContentView: View {
                                                 .foregroundColor(.white)
                                                 .padding(.horizontal, 10)
                                                 .padding(.vertical, 3)
-                                                .background(Color.pink)
+                                                .background(Color.cerisered)
                                                 .cornerRadius(80)
                                                 .frame(maxWidth: .infinity)
                                                 .font(.subheadline)
@@ -141,7 +143,7 @@ struct ContentView: View {
                             }
                             .padding(.horizontal)
                         }
-// Pink Banner (hidden until required)
+// cerisered Banner (hidden until required)
 //                        HStack {
 //                            VStack {
 //                                Text("Hello")
@@ -164,7 +166,7 @@ struct ContentView: View {
 //                            .padding()
 //                        }
 //                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
-//                        .background(Color.pink)
+//                        .background(Color.cerisered)
                         
                         VStack {
                             ForEach(charges, id: \.element.key) { c in
@@ -180,7 +182,7 @@ struct ContentView: View {
                 }
                 VStack {
                     Rectangle()
-                        .fill(.gray)
+                        .fill(Color.silver)
                         .frame(height: 1)
                     HStack {
                         Text("Total")
@@ -204,7 +206,7 @@ struct ContentView: View {
                                 .padding(.horizontal)
                                 .padding(.horizontal)
                                 .padding(.horizontal)
-                                .background(Color.pink)
+                                .background(Color.cerisered)
                                 .cornerRadius(8)
                                 
                         })
@@ -235,7 +237,7 @@ struct ContentView2: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.white)
                             .padding(8)
-                            .background(Color.pink)
+                            .background(Color.cerisered)
                             .cornerRadius(8)
                     }
                 }
@@ -259,6 +261,7 @@ struct ContentView2: View {
                                 Text("2 pcs Chicken, 3 pcs Nugget, 1 side and 1 drink")
                                     .font(.subheadline)
                                     .padding(.horizontal)
+                                    .foregroundColor(.dustygray)
                             }
                             Spacer()
                             Text("$ 12.60")
@@ -278,6 +281,7 @@ struct ContentView2: View {
                                 Text("Delicious boba with milk tea")
                                     .font(.subheadline)
                                     .padding(.horizontal)
+                                    .foregroundColor(.dustygray)
                             }
                             Spacer()
                             Text("$ 5.30")
@@ -292,10 +296,10 @@ struct ContentView2: View {
 //                    }
 //                    .foregroundColor(.white)
 //                    .padding(8)
-//                    .background(Color.pink)
+//                    .background(Color.cerisered)
 //                    .cornerRadius(8)
                     Rectangle()
-                        .fill(.gray)
+                        .fill(Color.silver)
                         .frame(height: 1)
                         .padding(.vertical)
                     
@@ -312,7 +316,7 @@ struct ContentView2: View {
                             }
                             .padding(.horizontal)
                         }
-// Pink Banner (hidden until required)
+// cerisered Banner (hidden until required)
 //                        HStack {
 //                            VStack {
 //                                Text("Hello")
@@ -335,7 +339,7 @@ struct ContentView2: View {
 //                            .padding()
 //                        }
 //                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width / 2.5)
-//                        .background(Color.pink)
+//                        .background(Color.cerisered)
                         
                         VStack {
                             ForEach(charges, id: \.element.key) { c in
@@ -351,7 +355,7 @@ struct ContentView2: View {
                 }
                 VStack {
                     Rectangle()
-                        .fill(.gray)
+                        .fill(Color.silver)
                         .frame(height: 1)
                     HStack {
                         Text("Total")
@@ -375,7 +379,7 @@ struct ContentView2: View {
                                 .padding(.horizontal)
                                 .padding(.horizontal)
                                 .padding(.horizontal)
-                                .background(Color.pink)
+                                .background(Color.cerisered)
                                 .cornerRadius(8)
                                 
                         })
@@ -425,7 +429,7 @@ struct CustomisationPage: View {
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding()
-                                    .background(Color.gray)
+                                    .background(Color.silver)
                                     .cornerRadius(8)
                             }
                             .padding()
@@ -439,10 +443,11 @@ struct CustomisationPage: View {
                                     Text("\(c.element.key)").padding(.horizontal)
                                     Spacer()
                                     Text("\(c.element.value)").padding(.horizontal)
+                                    
                                 }
                             }
                         }
-                        .background(Color.pink)
+                        .background(Color.fantasy)
                         .cornerRadius(8)
                         
                         // c2 start. customisation 2: calls customisation_ice
@@ -454,7 +459,7 @@ struct CustomisationPage: View {
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding()
-                                    .background(Color.gray)
+                                    .background(Color.silver)
                                     .cornerRadius(8)
                             }
                             .padding()
@@ -471,7 +476,7 @@ struct CustomisationPage: View {
                                 }
                             }
                         }
-                        .background(Color.pink)
+                        .background(Color.fantasy)
                         .cornerRadius(8)
                         
                         //c3. customisation 3: add pudding
@@ -505,7 +510,7 @@ struct CustomisationPage: View {
                             .padding(.horizontal)
                             .padding(.horizontal)
                             .padding(.horizontal)
-                            .background(Color.pink)
+                            .background(Color.cerisered)
                             .cornerRadius(8)
                             
                     })
@@ -578,7 +583,7 @@ struct CustomisationPage2: View {
                             .padding(.horizontal)
                             .padding(.horizontal)
                             .padding(.horizontal)
-                            .background(Color.pink)
+                            .background(Color.cerisered)
                             .cornerRadius(8)
                             
                     })
@@ -616,7 +621,7 @@ struct DoneView: View {
                     Spacer()
                     Text("Help")
                         .font(.headline)
-                        .foregroundColor(.pink)
+                        .foregroundColor(.cerisered)
                 }
                 .padding()
                 
@@ -632,7 +637,7 @@ struct DoneView: View {
                         HStack {
                             Text("Order number").font(.subheadline)
                             Spacer()
-                            Text("#xnnp-r6pt").padding(4).background(Color.gray).cornerRadius(8)
+                            Text("#xnnp-r6pt").padding(4).background(Color.silver).cornerRadius(8)
                         }
                     }
                     .padding()
@@ -653,27 +658,24 @@ struct StratchView: View {
                     Spacer()
                     Text("For dev to play around")
                         .font(.headline)
-                        .foregroundColor(.pink)
+                        .foregroundColor(.cerisered)
                 }
                 .padding()
                 
                 
                 
                 ScrollView(.vertical) {
-                    ZStack {
-                        Image("fp-customisation-page-hard-coded")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            //.frame(width: UIScreen.main.bounds.width/5)
-                            .cornerRadius(8)
-                        Image("fp-coming-soon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            //.frame(width: UIScreen.main.bounds.width/5)
-                            .cornerRadius(8)
-                    }
                     VStack() {
                         Text("Start scratch")
+                        NavigationLink("+", destination: CustomisationPage2())
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 3)
+                            .background(Color.cerisered)
+                            .cornerRadius(80)
+                            .frame(maxWidth: .infinity)
+                            .font(.subheadline)
                         
                         Text("End scratch")
                     }
