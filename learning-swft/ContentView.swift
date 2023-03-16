@@ -600,22 +600,91 @@ struct CustomisationPage2: View {
 }
 
 
-struct RadioButton: View {
-    @Binding var isSelected: Bool
-    var title: String
-    var price: String?
+struct ColorInvert: ViewModifier {
 
-    var body: some View {
-        HStack {
-            Toggle("", isOn: $isSelected)
-            Text(title)
-            Spacer()
-            if let price = price {
-                Text(price)
+    @Environment(\.colorScheme) var colorScheme
+
+    func body(content: Content) -> some View {
+        Group {
+            if colorScheme == .dark {
+                content.colorInvert()
+            } else {
+                content
             }
         }
     }
 }
+
+struct RadioButton: View {
+
+    @Environment(\.colorScheme) var colorScheme
+
+    let id: String
+    let callback: (String)->()
+    let selectedID : String
+    let size: CGFloat
+    let color: Color
+    let textSize: CGFloat
+
+    init(
+        _ id: String,
+        callback: @escaping (String)->(),
+        selectedID: String,
+        size: CGFloat = 20,
+        color: Color = Color.primary,
+        textSize: CGFloat = 14
+        ) {
+        self.id = id
+        self.size = size
+        self.color = color
+        self.textSize = textSize
+        self.selectedID = selectedID
+        self.callback = callback
+    }
+
+    var body: some View {
+        Button(action:{
+            self.callback(self.id)
+        }) {
+            HStack(alignment: .center, spacing: 10) {
+                Image(systemName: self.selectedID == self.id ? "largecircle.fill.circle" : "circle")
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: self.size, height: self.size)
+                    .modifier(ColorInvert())
+                Text(id)
+                    .font(Font.system(size: textSize))
+                Spacer()
+            }.foregroundColor(self.color)
+        }
+        .foregroundColor(self.color)
+    }
+}
+
+struct RadioButtonGroup: View {
+    let items: [String]
+    @Binding var selectedId: String
+    let callback: (String) -> Void
+    
+    var body: some View {
+        VStack {
+            ForEach(items, id: \.self) { item in
+                RadioButton(
+                    item,
+                    callback: radioGroupCallback,
+                    selectedID: selectedId
+                )
+            }
+        }
+    }
+    
+    func radioGroupCallback(id: String) {
+        selectedId = id
+        callback(id)
+    }
+}
+
 
 struct DeliveryPage: View {
     @Environment(\.presentationMode) var presentationMode
@@ -656,6 +725,8 @@ struct DeliveryPage: View {
 
 struct StratchView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var selectedCity = "London"
+        let cities = ["Rome", "London", "Paris", "Berlin", "New York"]
     var body: some View {
         NavigationView {
             VStack {
@@ -789,6 +860,16 @@ struct StratchView: View {
                         
                         //can I give it a shadow?
                         
+                        //can i create radio buttons?
+                        VStack {
+                            RadioButtonGroup(
+                                items: cities,
+                                selectedId: $selectedCity,
+                                callback: { selected in
+                                    print("Selected is: \(selected)")
+                                }
+                            )
+                        }
                     }
                     .padding()
                 }

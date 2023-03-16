@@ -16,6 +16,7 @@
 		0904B9F429B04899005B1337 /* learning_swftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904B9F329B04899005B1337 /* learning_swftUITestsLaunchTests.swift */; };
 		0904BA0129B1A87C005B1337 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0904BA0029B1A87C005B1337 /* DataModel.swift */; };
 		0904BA0429B1BD0E005B1337 /* MyDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0904BA0229B1BD0E005B1337 /* MyDataModel.xcdatamodeld */; };
+		09E589AA29C2B2980090775F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E589A929C2B2980090775F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		0904B9F329B04899005B1337 /* learning_swftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learning_swftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0904BA0029B1A87C005B1337 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0904BA0329B1BD0E005B1337 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		09E589A929C2B2980090775F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				0904B9D629B04896005B1337 /* learning_swftApp.swift */,
 				0904B9D829B04896005B1337 /* ContentView.swift */,
 				0904BA0029B1A87C005B1337 /* DataModel.swift */,
+				09E589A929C2B2980090775F /* Extensions.swift */,
 				0904BA0229B1BD0E005B1337 /* MyDataModel.xcdatamodeld */,
 				0904B9DA29B04899005B1337 /* Assets.xcassets */,
 				0904B9DC29B04899005B1337 /* Preview Content */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E589AA29C2B2980090775F /* Extensions.swift in Sources */,
 				0904B9D929B04896005B1337 /* ContentView.swift in Sources */,
 				0904BA0429B1BD0E005B1337 /* MyDataModel.xcdatamodeld in Sources */,
 				0904B9D729B04896005B1337 /* learning_swftApp.swift in Sources */,
