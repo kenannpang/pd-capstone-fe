@@ -197,7 +197,7 @@ struct ContentView: View {
                             .padding()
                     }
                     NavigationLink(
-                        destination: DoneView(),
+                        destination: DeliveryPage(),
                         label: {
                             Text("Make Payment")
                                 .font(.headline)
@@ -247,6 +247,9 @@ struct ContentView2: View {
                 .padding()
                 
                 ScrollView(.vertical) {
+                    Image("fp-cart-page-rider")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                     //order component, repeats a Horizontal container with qty, img, listing title, description, and price
                     VStack {
                         HStack {
@@ -370,7 +373,7 @@ struct ContentView2: View {
                             .padding()
                     }
                     NavigationLink(
-                        destination: DoneView(),
+                        destination: DeliveryPage(),
                         label: {
                             Text("Make Payment")
                                 .font(.headline)
@@ -614,7 +617,7 @@ struct RadioButton: View {
     }
 }
 
-struct DoneView: View {
+struct DeliveryPage: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
@@ -683,11 +686,109 @@ struct StratchView: View {
                         Image("fp-cart-page-rider")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                        HStack {
+                        VStack {
+                            //can I create a number bubble?
+                            Text("1")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 8)
+                                .background(Color.cerisered)
+                                .cornerRadius(80)
+                                .frame(maxWidth: .infinity)
+                                .font(.subheadline)
+                            //can I put words under that bubble?
                             
+                            //can I layer a number bubble on a rectangle?
+                            ZStack {
+                                VStack {
+                                    Rectangle()
+                                        .fill(Color.cerisered)
+                                        .frame(height: 6)
+                                }
+                                VStack {
+                                    Text("1")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 14)
+                                        .padding(.vertical, 8)
+                                        .background(Color.cerisered)
+                                        .cornerRadius(80)
+                                        .frame(maxWidth: .infinity)
+                                        .font(.subheadline)
+                                    Text("Menu")
+                                        .font(.subheadline)
+                                        .foregroundColor(Color.dustygray)
+                                }
+                            }
+                            
+                            VStack {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 400, height: 6)
+                                        .foregroundColor(.cerisered)
+                                    
+                                    Circle()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundColor(.cerisered)
+                                        .overlay(
+                                            Text("1")
+                                                .font(.headline)
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                        )
+                                }
+                                
+                                Text("one")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.gray)
+                            }
+                            //can I do that 3 times?
+                            VStack {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 400, height: 6)
+                                        .foregroundColor(.cerisered)
+                                    
+                                    HStack(spacing: 100) {
+                                        CircleView(number: "1", label: "one")
+                                        CircleView(number: "2", label: "two")
+                                        CircleView(number: "3", label: "three")
+                                    }
+                                }
+                            }
+                            //boom. component.
+                            //can I make some gray in colour?
+                            Spacer()
+                            ProgressBar(currentStep: 1)
+                            ProgressBar(currentStep: 2)
+                            ProgressBar(currentStep: 3)
                         }
                         
                         Text("End scratch")
+                        Image("fp-delivery-page-donate-a-meal")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        //can I create a rectangle with text, and give it a shadow?
+                        Text("Swift is awesome")
+                            .background(
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .shadow(
+                                        color: Color.gray.opacity(0.5),
+                                        radius: 8,
+                                        x: 4,
+                                        y: 4
+                                    )
+                            )
+                        
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 250, height: 100)
+                            .foregroundColor(Color.white)
+                            .shadow(color: .silver.opacity(0.7), radius: 3, x: 2, y: 2)
+                        
+                        //can I give it a shadow?
+                        
                     }
                     .padding()
                 }
@@ -696,6 +797,67 @@ struct StratchView: View {
         }
     }
 }
+
+struct CircleView: View {
+    let number: String
+    let label: String
+    
+    var body: some View {
+        VStack {
+            Circle()
+                .frame(width: 32, height: 32)
+                .foregroundColor(.cerisered)
+                .overlay(
+                    Text(number)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                )
+            
+            Text(label)
+                .font(.system(size: 14))
+                .foregroundColor(.gray)
+        }
+        .offset(y: 10)
+    }
+}
+
+struct ProgressBar: View {
+    let currentStep: Int
+
+    var body: some View {
+        ZStack {
+            // Draw a gray rectangle as the background of the progress bar
+            Rectangle()
+                .frame(width: 400, height: 6)
+                .foregroundColor(.gray)
+            
+            HStack(spacing: 0) {
+                // For each of the 3 steps, draw a circle and a connecting rectangle
+                ForEach(1...3, id: \.self) { step in
+                    Circle()
+                        .frame(width: 32, height: 32)
+                        // Set the circle color to pink if the step is less than or equal to the current step, gray otherwise
+                        .foregroundColor(step <= currentStep ? .cerisered : .gray)
+                        .overlay(
+                            Text("\(step)")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        )
+                    
+                    if step < 3 {
+                        Rectangle()
+                            .frame(width: 144, height: 6)
+                            // Set the rectangle color to pink if the step is less than the current step, gray otherwise
+                            .foregroundColor(step < currentStep ? .cerisered : .gray)
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 
@@ -706,7 +868,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView2()
         CustomisationPage()
         CustomisationPage2()
-        DoneView()
+        DeliveryPage()
         StratchView()
     }
 }
